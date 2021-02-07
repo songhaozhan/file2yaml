@@ -66,5 +66,5 @@ func main() {
 	if err != nil {
 		return
 	}
-	log.Println("create file :", destFile)
+	log.Println("create file 乱码 :", destFile)
 }
