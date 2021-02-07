@@ -55,3 +55,18 @@ func Tree2Map(tree *toml.Tree) map[string]interface{} {
 	}
 	return result
 }
+
+func Toml2Yaml2(tomlData []byte) (string, error) {
+	tree, err := toml.LoadBytes(tomlData)
+	if err != nil {
+		return "", err
+	}
+	tomlMap := tree.ToMap()
+	yamlData, err := yaml.Marshal(tomlMap)
+	if err != nil {
+		return "", err
+	}
+	fmt.Println(string(yamlData))
+	return "", nil
+
+}
